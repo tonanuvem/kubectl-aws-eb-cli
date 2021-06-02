@@ -18,10 +18,10 @@ RUN apk -v --no-cache --update add \
     rm -rf /var/cache/apk/*
 
 # https://github.com/aws/aws-elastic-beanstalk-cli-setup
-RUN apk --no-cache add --virtual .build-dependencies build-base python-dev libffi-dev openssl-dev && \
+RUN apk --no-cache add --virtual .build-dependencies build-base python3-dev libffi-dev openssl-dev && \
     git clone https://github.com/aws/aws-elastic-beanstalk-cli-setup.git && \
-    pip install virtualenv && \
-    python aws-elastic-beanstalk-cli-setup/scripts/ebcli_installer.py && \
+    pip3 install virtualenv && \
+    python3 aws-elastic-beanstalk-cli-setup/scripts/ebcli_installer.py && \
     rm -rf aws-elastic-beanstalk-cli-setup /root/.cache && \
     apk del --purge .build-dependencies
 
