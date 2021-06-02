@@ -11,7 +11,7 @@ RUN apk -v --no-cache --update add \
         git \
         bash \
         jq \
-        openssh-client
+        openssh-client \
         && \
     pip --no-cache-dir install --upgrade awscli==${AWSCLI_VERSION} && \
     apk -v --purge del py-pip && \
